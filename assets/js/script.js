@@ -6,18 +6,18 @@ var punteggio = 0;
 var scelta_diff = parseInt(prompt("Inserisci la difficolta: 0, 1, 2"));
 switch (scelta_diff){
   case (scelta_diff == 0):
-    arrBombe = calcolo_bombe( 100, 1, arrBombe);
-    arrUtente = calcolo_vittorie( 100, 1, arrBombe, arrUtente);
+    arrBombe = calcolo_bombe( 100, 1);
+    arrUtente = calcolo_vittorie( 100, 1);
     break;
 
   case (scelta_diff == 1):
-    arrBombe = calcolo_bombe( 80, 1, arrBombe);
-    calcolo_vittorie( 80, 1, arrBombe, arrUtente);
+    arrBombe = calcolo_bombe( 80, 1);
+    arrUtente = calcolo_vittorie( 80, 1);
     break;
 
   case (scelta_diff == 2):
-    arrBombe = calcolo_bombe( 50, 1, arrBombe);
-    calcolo_vittorie( 50, 1, arrBombe, arrUtente);
+    arrBombe = calcolo_bombe( 50, 1);
+    arrUtente = calcolo_vittorie( 50, 1);
     break;
 
   case (scelta_diff > 2):
@@ -32,7 +32,7 @@ switch (scelta_diff){
 
 
 // Creo una funzione inserire, con un ciclo, for in maniera randomica 16 numeri da 1 a 100 in un array al computer.
-function calcolo_bombe( max, min, arrRandom){
+function calcolo_bombe( max, min){
   var i = 1;
   while(i <= 16 ){
     var valoreRandom = 0;
@@ -50,7 +50,7 @@ function calcolo_bombe( max, min, arrRandom){
 }
 
 // Creo una funzione per far inserire all'utente i numeri su cui faccio i controlli dovuti.
-function calcolo_vittorie( max, min, arrRandom, arrGiocatore){
+function calcolo_vittorie( max, min){
 
   // Inizializzo un contatore per il punteggio e un flag per uscire dal ciclo.
   var flag = false;
